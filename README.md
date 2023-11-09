@@ -21,6 +21,9 @@ Ton install pyserial in your everonment
 Check this line:
     arduinoData = serial.Serial("/dev/ttyACM0", 9600)
 
-For mostly windows users the port in commonly COM5 port.
-You can also check the port your arduino is using by opening the Arduino IDE
+** You can check the port in Windows by: **
+
+_ Open the Arduino IDE._
+_ Click on Tools in the menu bar and select Port from the drop-down menu. _
+_ The port that the Arduino is using will be highlighted in the list. Take note of the port number (e.g., COM3). _
 
