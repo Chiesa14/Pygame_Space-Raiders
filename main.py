@@ -30,6 +30,7 @@ bg_sound = pygame.mixer.music.load('assets/bg.mp3')
 pygame.mixer.music.set_volume(.2)
 pygame.mixer.music.play(-1)
 shooting_sound = pygame.mixer.Sound('shoot.wav')
+game_over_sound = pygame.mixer.Sound('assets/game-over.mp3')
 
 
 class Bullet(pygame.sprite.Sprite):
@@ -48,8 +49,6 @@ class Bullet(pygame.sprite.Sprite):
 
 
 class Enemy(pygame.sprite.Sprite):
-    lives = 3
-
     def __init__(self):
         super().__init__()
         self.image = pygame.image.load("assets/pixel_ship_green_small.png")
@@ -76,9 +75,9 @@ enemies = pygame.sprite.Group()
 last_shot_time = time.time()
 cooldown_time = 0.35
 
-enemy_spawn_delay = 1.0
+enemy_spawn_delay = 1.5
 last_enemy_spawn_time = time.time() - enemy_spawn_delay
-max_enemies_on_screen = 5
+max_enemies_on_screen = 6
 
 score = 0
 lives = 3
@@ -133,6 +132,19 @@ def game_over():
     screen.blit(quit_text, quit_text_rect)
 
 
+def restart_game():
+    global character_x, character_y, score, lives, gameover, run
+    pygame.mixer.music.play(-1)
+    character_x = (WIDTH - character.width) // 2
+    character_y = (HEIGHT - character.height) - 10
+    enemies.empty()
+    bullets.empty()
+    score = 0
+    lives = 3
+    gameover = False
+
+
+
 while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -179,6 +191,7 @@ while run:
         game_over()
     if event.type == pygame.MOUSEBUTTONDOWN and restart_button.collidepoint(pygame.mouse.get_pos()):
         restart_game()
+
     if event.type == pygame.MOUSEBUTTONDOWN and quit_button.collidepoint(pygame.mouse.get_pos()):
         pygame.quit()
         exit()
