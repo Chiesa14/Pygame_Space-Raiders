@@ -113,7 +113,7 @@ def game_over():
     shooting_sound.stop()
     gameover = True
     screen.fill(black)
-    game_over_text = font.render("🥹 Game Over !!!", True, red)
+    game_over_text = font.render("Game Over !!!", True, red)
     text_rect = game_over_text.get_rect()
     text_rect.center = (screen.get_width() / 2, screen.get_height() / 2)
     screen.blit(game_over_text, text_rect)
