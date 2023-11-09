@@ -114,19 +114,21 @@ def game_over():
     screen.fill(black)
     game_over_text = font.render("Game Over !!!", True, red)
     text_rect = game_over_text.get_rect()
-    text_rect.center = (screen.get_width() / 2, screen.get_height() / 2)
+    text_rect.center = (screen.get_width() / 2, screen.get_height() / 6)
     screen.blit(game_over_text, text_rect)
 
     restart_button_color = (0, 255, 0) if restart_button.collidepoint(pygame.mouse.get_pos()) else (0, 128, 0)
     pygame.draw.rect(screen, restart_button_color, restart_button)
-    restart_text = font.render("RESTART", True, (255, 255, 255))
+    restart_button.center = (screen.get_width() / 2, (screen.get_height() - 100) / 2)
+    restart_text = font.render("RESTART", True, white)
     restart_text_rect = restart_text.get_rect()
     restart_text_rect.center = restart_button.center
     screen.blit(restart_text, restart_text_rect)
 
     quit_button_color = (255, 0, 0) if quit_button.collidepoint(pygame.mouse.get_pos()) else (128, 0, 0)
     pygame.draw.rect(screen, quit_button_color, quit_button)
-    quit_text = font.render("QUIT", True, (255, 255, 255))
+    quit_button.center = (screen.get_width() / 2, (screen.get_height() + 100) / 2)
+    quit_text = font.render("QUIT", True, white)
     quit_text_rect = quit_text.get_rect()
     quit_text_rect.center = quit_button.center
     screen.blit(quit_text, quit_text_rect)
