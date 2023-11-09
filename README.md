@@ -40,23 +40,23 @@ Check this line:
 
 **You can check the port by:**
 
-*1.Open the Arduino IDE.*
+1.Open the Arduino IDE.
 
-*2.Click on Tools in the menu bar and select Port from the drop-down menu.*
+2.Click on Tools in the menu bar and select Port from the drop-down menu.
 
-*3.The port that the Arduino is using will be highlighted in the list. Take note of the port number (e.g., COM3).*
+3.The port that the Arduino is using will be highlighted in the list. Take note of the port number (e.g., COM3).
 
 **Alternatively in linux  you can check the port number by:**
 
-*1.Open a terminal window.*
+1.Open a terminal window.
 
-*2.Run the following command to list all the serial ports:*
+2.Run the following command to list all the serial ports:
 
     ls /dev/tty*
 
-*3.Look for a port name that starts with */dev/ttyUSB* or /dev/ttyACM. The number at the end may vary depending on your system and the number of connected devices.*
+3.Look for a port name that starts with ***/dev/ttyUSB*** or ***/dev/ttyACM***. The number at the end may vary depending on your system and the number of connected devices.
 
-*4.Take note of the port name (e.g., /dev/ttyUSB0 or /dev/ttyACM1) that the Arduino is using.*
+4.Take note of the port name (e.g., /dev/ttyUSB0 or /dev/ttyACM1) that the Arduino is using.
 
 
 
