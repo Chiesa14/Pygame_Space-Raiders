@@ -35,6 +35,7 @@ Ton install pyserial in your everonment
 # 3.  Check the configuration serial 
 
 Check this line:
+
     arduinoData = serial.Serial("/dev/ttyACM0", 9600)
 
 **You can check the port by:**
@@ -68,3 +69,7 @@ After making sure that all the Files and settings are well configured, you can r
 Or use your Text Editor to run the project if it is capable of doig so! 😂
 
 
+
+# Check out how it looks 😱
+
+![The sample output of the awesome game ](https://github.com/Chiesa14/Pygame_Space-Raiders/blob/main/output.png)
