@@ -1,10 +1,9 @@
 //input pins
 
 //analog
-int JSx = A0;
+int JSx = A0; 
 int JSy = A2;
 
-//digital
 int JSpin = 9;
 
 //read JS position values
